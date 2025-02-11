@@ -9,3 +9,12 @@ module.exports.getNewCard = function(req, res) {
             bildName: cards[index].imageName
         });
 }
+
+module.exports.getCardAtIndex = function(req, res) {
+    const { id }  = req.params;
+    res.render("card", 
+        {
+            pokemon: cards[id].name,
+            bildName: cards[id].imageName
+        });
+}
